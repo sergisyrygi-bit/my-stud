@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнє завдання</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>Приклад 1 — селектор елемента: цей абзац стилізовано селектором p.</p>
+    <p class="main-text">Приклад 2 — селектор класу .main-text.</p>
+    <p id="info">Приклад 3 — селектор ідентифікатора #info.</p>
+    <p data-example="value">Приклад 4 — селектор атрибута data-example.</p>
+    <h2>Приклад 5 — дочірній селектор .main-nav &gt; p</h2>
+    <div class="main-nav">
+        <p>Прямий дочірній абзац — його стилізує селектор .main-nav &gt; p.</p>
+        <div>
+            <p>Вкладений абзац — він не є прямою дитиною .main-nav.</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>Приклад 6 — сусідній селектор h1 + p</h1>
+        <p>Цей абзац одразу після h1 і стилізований селектором h1 + p.</p>
+        <p>Цей абзац не є безпосереднім сусідом h1.</p>
+    </div>
+
+    <div class="main-footer">
+        <h2>Приклад 7 — селектор наступних сусідів h2 ~ p</h2>
+        <p>Цей абзац стилізований селектором h2 ~ p.</p>
+        <p>І цей абзац також стилізований селектором h2 ~ p.</p>
+    </div>
+
+    <h2>Приклад 8 — селектор нащадка .middle p</h2>
+    <div class="middle">
+        <p>Цей абзац є нащадком .middle і стилізований селектором .middle p.</p>
+    </div>
+
+    <div>
+        <h2>Конфлікт специфічності селекторів</h2>
+        <p class="first-style">Перший конфлікт: селектори .first-style — (0, 1, 0) і p.first-style — (0, 1, 1) мають різну специфічність. Застосовується p.first-style, бо він містить селектор типу й має більше значення в третьому числі кортежу.</p>
+        <p id="rrr" class="last-style">Другий конфлікт: селектори .last-style — (0, 1, 0) і #rrr — (1, 0, 0) конкурують за колір. Застосовується #rrr, бо селектор з ID має більшу специфічність.</p>
+    </div>
+
+    <button class="button tap1">Кнопка 1</button>
+    <button class="button tap2">Кнопка 2</button>
+    <button class="button tap3">Кнопка 3</button>
+</body>
+</html>
