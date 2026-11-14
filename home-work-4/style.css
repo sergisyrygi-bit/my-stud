@@ -24,7 +24,7 @@ p {
     font-size: 30px;
 }
 p[data-example="value"] {
-    color: #2c2cff;
+    color: #9aa8ff;
     font-size: 35px;
 }
 div.main-content h1 + p {
