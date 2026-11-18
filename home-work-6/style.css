@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #202124;
+    background: #f4f6f8;
+}
+
+.cards {
+    max-width: 760px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.card {
+    width: 100%;
+    max-width: 680px;
+    margin: 24px auto;
+    overflow-wrap: anywhere;
+}
+
+.card--compact {
+    position: relative;
+    padding: 52px 20px 20px;
+    border: 1px solid #5c67d8;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.card--spacious {
+    padding: 32px 40px;
+    margin-block: 32px;
+    border: 4px solid #d6a239;
+    border-radius: 18px;
+    background: #fffaf0;
+}
+
+.card__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #d92d20;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card__title {
+    margin: 0 0 12px;
+}
+
+.card__text {
+    margin: 0;
+    line-height: 1.5;
+}
