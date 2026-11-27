@@ -9,6 +9,7 @@
 
 
     --container-width: 1110px;
+    --font-main: 'Roboto', sans-serif;
 }
 @font-face {
     font-family: 'Roboto';
@@ -43,14 +44,14 @@
 .nav__link {
     text-decoration: none;
     color: var(--color-dark);
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: 16px;
     line-height: 164%;
     padding: 0 25px;
 }
 
-.nav__link.active {
+.nav__link_active {
     color: var(--color-primary);
     padding: 0 25px 0 0 ;
 }
@@ -66,7 +67,7 @@
     
 }
 .hero__title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 500;
     font-size: 48px;
     line-height: 164%;
@@ -75,7 +76,7 @@
     padding: 150px 0 0 0 ;
 }
 .hero__text {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: 16px;
     line-height: 164%;
@@ -83,7 +84,7 @@
     padding: 60px 0 0 0 ;
 }
 .hero__btn {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: 16px;
     line-height: 164%;
@@ -97,7 +98,7 @@
     background-color: var(--color-background );
 }
 .about__title{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 500;
     font-size: 32px;
     color: var(--color-dark);
@@ -105,7 +106,7 @@
     padding: 115px 0 0 0 ;
 }
 .about__text{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: 16px;
     line-height: 164%;
@@ -129,27 +130,28 @@
     
 }
 .section-ul__item{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: center;
     padding: 100px 0 100px 0;
     color: var(--color-white);
     
 }
-.div-li{
+.section-ul__item-info{
     display: flex;
     flex-direction: column;
     gap: 10px ;
-    padding-left: 20px;
 }
 .section-ul__item-title{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 500;
     font-size: 21px;
     line-height: 100%;
 
 }
 .section-ul__item-text{
-     font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: 16px;
     line-height: 164%;   
@@ -157,11 +159,57 @@
 .video{
     background-color: var(--color-light);
 }
-.video-h2{
+.video__title{
     padding-top:100px ;
 }
-.video-p{
+.video__text{
     padding: 50px 0 60px 0 ;
+}
+.video__player{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 11 / 6;
+    margin-bottom: 100px;
+    background-color: var(--color-dark);
+}
+.video__iframe,
+.video__preview{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.video__preview{
+    z-index: 1;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: var(--color-dark);
+}
+.video__cover{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.video__play{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 68px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background: var(--color-primary);
+}
+.video__play::after{
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 14px;
+    border-left: 20px solid var(--color-white);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 .footer{
     background-color: var(--color-primary);
@@ -171,22 +219,19 @@
 }
 .footer__text-name{
     padding: 50px 0 20px 0 ;
-     font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: 21px;
     line-height: 100%;
 }
 .footer__text{
     padding-bottom: 50px;
-     font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     font-weight: 400;
     font-size: 13px;
     line-height: 164%;
 }
-iframe{
-    padding-bottom: 100px;
-}
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .container {
         width: calc(100% - 30px);
     }
@@ -205,7 +250,7 @@ iframe{
         font-size: 14px;
     }
 
-    .nav__link.active {
+    .nav__link_active {
         padding: 8px 10px;
     }
 
@@ -241,10 +286,9 @@ iframe{
         padding: 32px 8px;
     }
 
-    .video iframe {
+    .video__player {
         width: 100%;
-        height: auto;
         aspect-ratio: 16 / 9;
-        padding: 0;
+        margin-bottom: 64px;
     }
 }
