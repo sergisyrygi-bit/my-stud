@@ -30,13 +30,12 @@
 .header-nav > .header__nav-ul:last-child {
     margin-left: auto;
 }
-.header__nav-ul li a {
+.header__nav-link {
     display: flex;
     align-items: center;
     gap: 5px;
     text-decoration: none;
     color: #fff;
-
 }
 .header__nav__li-icon{
     color: #fff;    
@@ -98,7 +97,7 @@
 
 
 
-footer {
+.footer {
     background-color: #000;
     color: #fff;
     padding: 20px 0;
